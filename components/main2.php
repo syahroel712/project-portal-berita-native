@@ -48,9 +48,10 @@
         count( tb_komentar.berita_id) AS banyak_komentar 
         FROM tb_komentar
         INNER JOIN tb_berita
+        ON tb_komentar.berita_id=tb_berita.berita_id
         INNER JOIN tb_kategori
         ON tb_kategori.kategori_id = tb_berita.kategori_id
-        ON tb_komentar.berita_id=tb_berita.berita_id
+        
          group by tb_komentar.berita_id) 
          hasil ORDER BY hasil.banyak_komentar DESC LIMIT 5"
     );
